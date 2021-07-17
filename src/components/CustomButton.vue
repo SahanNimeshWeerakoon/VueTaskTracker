@@ -1,5 +1,5 @@
 <template>
-    <button v-on:click="addTask()" v-bind:style="{background: color}">{{ text }}</button>
+    <button v-on:click="$emit('toggle-add-task')" v-bind:style="{background: color}">{{ text }}</button>
 </template>
 
 <script>
@@ -11,9 +11,6 @@ export default {
         color: String
     },
     methods: {
-        addTask() {
-            console.log("Add Task Clicked");
-        }
     }
 }
 </script>
