@@ -1,8 +1,8 @@
 <template>
-    <div v-bind:class="['task', task.reminder ? 'reminder' : '']">
+    <div @dblclick="$emit('toggle-reminder', task.id)" v-bind:class="['task', task.reminder ? 'reminder' : '']">
         <h3>
             {{ task.text }}
-            <i class="fas fa-times" @click="deleteTask(task.id)"></i>
+            <i class="fas fa-times" @click="$emit('delete-task', task.id)"></i>
         </h3>
         <p>{{ task.day }}</p>
     </div>
@@ -12,11 +12,6 @@ export default {
     name: 'Task',
     props: {
         task: Object
-    },
-    methods: {
-        deleteTask(id) {
-            this.$emit('delete-task', id);
-        }
     }
 }
 </script>
