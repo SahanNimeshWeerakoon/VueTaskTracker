@@ -1,5 +1,5 @@
 <template>
-    <button v-on:click="$emit('toggle-add-task')" v-bind:style="{background: color}">{{ text }}</button>
+    <button v-on:click="$emit('btn-click')" v-bind:style="{background: color}">{{ text }}</button>
 </template>
 
 <script>
